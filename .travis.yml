@@ -10,6 +10,15 @@ python:
   - "3.7-dev"  # 3.7 development branch
 install:
   - pip install pyinstaller
-  - pyinstaller hello.py
+  - pyinstaller --onefile hello.py
 script:
   - python hello.py
+  - ./dist/hello
+deploy:
+  provider: releases
+  api_key: $GITHUB_OAUTH_TOKEN
+  file:
+    - dist/hello
+  skip_cleanup: true
+  on:
+    tags: true
