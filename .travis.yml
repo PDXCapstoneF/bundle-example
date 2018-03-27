@@ -20,3 +20,5 @@ deploy:
   file:
     - dist/hello
   skip_cleanup: true
+  on:
+    branch: master
