@@ -16,7 +16,7 @@ script:
   - ./dist/hello
 deploy:
   provider: releases
-  api_key: $GITHUB_OAUTH_TOKEN
+  api_key: ${GITHUB_OAUTH_TOKEN}
   file:
     - dist/hello
   skip_cleanup: true
